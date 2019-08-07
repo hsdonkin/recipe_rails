@@ -7,15 +7,15 @@ class IngredientsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    @ingredient = @recipe.ingredients.new(:name => params[:name])
-    @ingredient.save
-
-    # ok now go and make it happen
-    if @recipe.ingredients << @ingredient
-      redirect_to recipe_path(@recipe)
+    if Ingredient.find_by_name(params[:name])
+      @ingredient = Ingredient.find_by_name(params[:name])
     else
-      render :new
+      @ingredient = @recipe.ingredients.new(:name => params[:name])
+      @ingredient.save
+      @recipe.ingredients << @ingredient
     end
+      redirect_to recipe_path(@recipe)
+
   end
 
   def index
