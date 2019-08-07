@@ -1,0 +1,14 @@
+<h2><%= @recipe.title %></h2>
+
+
+<h3>Add ingredients</h3>
+
+<%= form_tag(recipe_ingredients_path(@recipe)) do %>
+  <%= label_tag("Ingredient Name") %>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("ADD") %>
+
+<% end %>
+
+<h3> Ingredient List </h3>
+<ul><%= @ingredient.show(:name) %></ul>
