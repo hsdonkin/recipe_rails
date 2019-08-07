@@ -10,9 +10,12 @@ class IngredientsController < ApplicationController
     @ingredient = @recipe.ingredients.new(:name => params[:name])
     @ingredient.save
 
-    # ok now go and make it ahppen
-    @recipe.ingredients << @ingredient
-    render :new
+    # ok now go and make it happen
+    if @recipe.ingredients << @ingredient
+      redirect_to recipe_path(@recipe)
+    else
+      render :new
+    end
   end
 
   def index

@@ -10,5 +10,11 @@
 
 <% end %>
 
+<% if @recipe.ingredients.any? %>
 <h3> Ingredient List </h3>
-<!-- <ul><%# @ingredient.show(:name) %></ul> -->
+<ul>
+  <% @recipe.ingredients.each do |x| %>
+    <li><%= x.name %></li>
+  <% end %>
+</ul>
+<% end %>
