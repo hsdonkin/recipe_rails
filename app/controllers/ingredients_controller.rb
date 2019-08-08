@@ -12,7 +12,8 @@ class IngredientsController < ApplicationController
     else
       @ingredient = @recipe.ingredients.new(:name => params[:name])
       @ingredient.save
-      @recipe.ingredients << @ingredient
+      # this adds the ingredient in to the collection
+      @recipe.ingredients.push(@ingredient)
     end
       redirect_to recipe_path(@recipe)
 
