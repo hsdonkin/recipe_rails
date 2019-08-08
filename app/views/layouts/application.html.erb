@@ -14,18 +14,19 @@
 
   <body>
     <div class="jumbotron">
-      <h1>Welcome to Dope Recipes Site</h1>
+      <h1>Welcome to Our Dope Recipes Site</h1>
       <nav>
 
           <a href="/" class="btn btn-success">Home</a>
           <a href="/recipes" class="btn btn-success">View Recipes</a>
+          <a href="http://www.google.com">Google</a>
 
       </nav>
     </div>
     <div class="container">
         <% if flash[:notice] %>
           <%# this basically is an extension of the flash where the flash now contains a hash, so the extra string gets into the hash and pulls out values we need %>
-  
+
           <div style="animation-delay: 2s; animation: fadeMe 2s;" class="<%= flash[:notice]["class"] %>">
           <%=   flash[:notice]["body"] %>
           </div>
