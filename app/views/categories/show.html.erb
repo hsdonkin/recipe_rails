@@ -1,0 +1,12 @@
+<h2>Add Recipes to <%= @category.name %></h2>
+<%= form_tag do %>
+
+  <% @recipes.each do |r| %>
+    <div>
+      <%= label_tag r.title %>
+      <%= check_box(r.title, {:checked => true}) %>
+    </div>
+  <% end %>
+
+  <%= submit_tag("Add Recipes")%>
+<% end %>

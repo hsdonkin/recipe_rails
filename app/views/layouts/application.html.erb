@@ -10,6 +10,8 @@
 
     <%# this gets us bootstrap from the CDN! %>
     <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag params[:controller] %>
+
   </head>
 
   <body>
@@ -19,7 +21,8 @@
 
           <a href="/" class="btn btn-success">Home</a>
           <a href="/recipes" class="btn btn-success">View Recipes</a>
-          <a href="http://www.google.com">Google</a>
+          <%# This is basically the same as an anchor tag %>
+          <%= link_to "View Categories", categories_path, :class =>"btn btn-success" %>
 
       </nav>
     </div>
