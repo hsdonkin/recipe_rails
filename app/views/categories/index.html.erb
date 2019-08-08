@@ -1,0 +1,13 @@
+<h2>Categories:</h2>
+<%= link_to "Add Category", new_category_path, :class=>"btn btn-success" %>
+
+<% if @categories.any? %>
+  <% @categories.each do |c| %>
+    <div class="card category-card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= c.name %></h5>
+          <%= link_to "Add Recipes To This Category", category_path(c)%>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,7 +1,7 @@
 <%= link_to 'Add Recipe', new_recipe_path %>
 
 <% if @recipes.any? %>
-  <h2>Current Recipes:</h2>
+  <h2>All Recipes:</h2>
   <ul>
     <% @recipes.each do |r| %>
       <li><%= link_to r.title, recipe_path(r) %></li>
